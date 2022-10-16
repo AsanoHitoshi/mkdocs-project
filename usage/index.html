@@ -58,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#usage-hogehoge" class="md-skip">
+        <a href="#github-pages" class="md-skip">
           Skip to content
         </a>
       
@@ -201,54 +201,9 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Usage
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         Usage
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#start-development-server-on-httplocalhost8000" class="md-nav__link">
-    Start development server on http://localhost:8000
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#build-documentation" class="md-nav__link">
-    Build documentation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deploy-documentation-to-github-pages" class="md-nav__link">
-    Deploy documentation to GitHub Pages
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -262,7 +217,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../DockerDesktopForMacWindows/" class="md-nav__link">
+      <a href="../DockerDesktopForMacWindows.md" class="md-nav__link">
         Kubernetes
       </a>
     </li>
@@ -289,35 +244,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#start-development-server-on-httplocalhost8000" class="md-nav__link">
-    Start development server on http://localhost:8000
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#build-documentation" class="md-nav__link">
-    Build documentation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deploy-documentation-to-github-pages" class="md-nav__link">
-    Deploy documentation to GitHub Pages
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -330,6 +256,19 @@
                 
 
 
+<h1 id="github-pages">GitHub Pagesへのデプロイ方法</h1>
+<pre><code>docker run --rm -it -v ${PWD}:/docs squidfunk/mkdocs-material build
+docker run --rm -it -v ~/.ssh:/root/.ssh -v ${PWD}:/docs squidfunk/mkdocs-material gh-deploy 
+</code></pre>
+<h1 id="_1">備忘録</h1>
+<h2 id="_2">バージョンがおかしくなった場合の対処法</h2>
+<pre><code>ERROR    -  Deployment terminated: Previous deployment was made with MkDocs version 1.4.1; you are attempting to deploy with an older version (1.2.3). Use
+            --ignore-version to deploy anyway.
+Deployment Aborted!
+</code></pre>
+<p>上記のエラーとなった場合、下記コマンドで一度デプロイを行う。</p>
+<pre><code>docker run --rm -it -v ~/.ssh:/root/.ssh -v ${PWD}:/docs squidfunk/mkdocs-material gh-deploy --ignore-version
+</code></pre>
 <h1 id="usage-hogehoge">Usage hogehoge</h1>
 <p>Add the following line to your mkdocs.yml:</p>
 <pre><code>theme:
@@ -376,21 +315,6 @@ docker run --rm -it -d -p 8000:8000 -v ${PWD}:/docs squidfunk/mkdocs-material
           </div>
         </a>
       
-      
-        
-        <a href="../DockerDesktopForMacWindows/" class="md-footer__link md-footer__link--next" aria-label="Next: Kubernetes" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Kubernetes
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
       
     </nav>
   
