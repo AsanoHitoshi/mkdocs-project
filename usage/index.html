@@ -58,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#usage" class="md-skip">
+        <a href="#usage-hogehoge" class="md-skip">
           Skip to content
         </a>
       
@@ -254,6 +254,21 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DockerDesktopForMacWindows/" class="md-nav__link">
+        Kubernetes
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -315,7 +330,7 @@
                 
 
 
-<h1 id="usage">Usage</h1>
+<h1 id="usage-hogehoge">Usage hogehoge</h1>
 <p>Add the following line to your mkdocs.yml:</p>
 <pre><code>theme:
   name: 'material'
@@ -323,6 +338,7 @@
 <p>Mount the folder where your mkdocs.yml resides as a volume into /docs:</p>
 <h2 id="start-development-server-on-httplocalhost8000">Start development server on http://localhost:8000</h2>
 <pre><code>docker run --rm -it -p 8000:8000 -v ${PWD}:/docs squidfunk/mkdocs-material
+docker run --rm -it -d -p 8000:8000 -v ${PWD}:/docs squidfunk/mkdocs-material
 </code></pre>
 <h2 id="build-documentation">Build documentation</h2>
 <pre><code>docker run --rm -it -v ${PWD}:/docs squidfunk/mkdocs-material build
@@ -331,6 +347,8 @@
 <pre><code>docker run --rm -it -v ~/.ssh:/root/.ssh -v ${PWD}:/docs squidfunk/mkdocs-material gh-deploy 
 </code></pre>
 <p>For other installation methods, configuration options, and a demo, visit squidfunk.github.io/mkdocs-material</p>
+<pre><code>docker exec -it loving_galois sh
+</code></pre>
 
               
             </article>
@@ -358,6 +376,21 @@
           </div>
         </a>
       
+      
+        
+        <a href="../DockerDesktopForMacWindows/" class="md-footer__link md-footer__link--next" aria-label="Next: Kubernetes" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Kubernetes
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
       
     </nav>
   
