@@ -1,4 +1,4 @@
-# Usage
+# Usage hogehoge
 Add the following line to your mkdocs.yml:
 
 ```

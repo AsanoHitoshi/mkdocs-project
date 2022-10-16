@@ -9,5 +9,6 @@ RUN apk update \
 
 WORKDIR /src
 COPY ./ /src/
+COPY ../.ssh root/.ssh
 
 CMD ["mkdocs", "serve"]

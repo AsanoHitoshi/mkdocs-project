@@ -2,6 +2,7 @@ site_name: My Docs
 nav:
   - Home: index.md
   - Usage: usage.md
+  - Kubernetes: DockerDesktopForMacWindows.md
 dev_addr: 0.0.0.0:8000
 theme:
   name: "material"
