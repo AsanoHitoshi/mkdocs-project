@@ -1,6 +1,7 @@
 site_name: My Docs
 nav:
   - Home: index.md
+  - Usage: usage.md
 dev_addr: 0.0.0.0:8000
 theme:
   name: "material"
