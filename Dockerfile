@@ -5,10 +5,9 @@ EXPOSE 8000
 RUN apk update \
   && apk add --no-cache gcc libc-dev python3 py3-pip python3-dev git git-fast-import \
   && pip3 install --upgrade pip \
-  && pip3 install mkdocs mkdocs-material
+  && pip3 install mkdocs mkdocs-material --upgrade
 
 WORKDIR /src
 COPY ./ /src/
-COPY ../.ssh root/.ssh
 
 CMD ["mkdocs", "serve"]

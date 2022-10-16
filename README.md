@@ -11,7 +11,7 @@ docker build . -t mkdocs
 現在のディレクトを/scr に同期する設定
 
 ```
-docker run --name mkdocs -d -p 8000:8000 --mount type=bind,source=$(pwd)/,target=/src/ mkdocs
+docker run --name mkdocs -d -p 8000:8000 -v ~/.ssh:/root/.ssh --mount type=bind,source=$(pwd)/,target=/src/ mkdocs
 ```
 
 ## コンテナのシェルに入る
